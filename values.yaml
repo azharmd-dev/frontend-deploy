@@ -1,4 +1,4 @@
-deployment:
+deployement:
   imageRepo: 522534289017.dkr.ecr.us-east-1.amazonaws.com/robomart
   component: frontend
   imageVersion: IMAGE_VERSION
