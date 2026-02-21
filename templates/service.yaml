@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: robomart
+spec:
+  type: LoadBalancer
+  selector:
+    project: {{ .Values.deployment.project }}
+    component: {{ .Values.deployment.component }}
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 8080 # container port
+---
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: frontend
+  namespace: robomart
+spec:
+  serviceRef:
+    name: frontend # route traffic to the awesome-service
+    port: 80
+  targetGroupARN: {{ .Values.tgb.arn }}
+  targetType: ip
