@@ -1,2 +1,2 @@
 tgb:
-  arn: arn:aws:elasticloadbalancing:us-east-1:522534289017:loadbalancer/app/robomart-dev-ingress-alb/33ebfe0e1e67a622
+  arn: arn:aws:elasticloadbalancing:us-east-1:522534289017:targetgroup/robomart-dev-frontend/09d50a6786164f05
